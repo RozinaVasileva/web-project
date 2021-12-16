@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons :: head"></head>
+<body>
+<header th:replace="fragments/commons :: navigation"></header>
+<main class>
+    <div class="row">
+        <div th:each="y : ${yachts}" th:object="${y}" class="col-6 col-md-4">
+            <div class="card">
+                <img style="width: 100%" th:src="*{imageUrl}" class="card-img-top"
+                     alt="Thumbnail [750%500]">
+                <div class="container">
+                    <h5 th:text="*{model}">Yacht model</h5>
+                    <h4 th:text="*{type}">Yacht type</h4>
+                    <h3 th:text="*{price}">Yacht price</h3>
+                </div>
+                <div class="container">
+                    <p th:text="*{description}"></p>
+                    <a class="ml-3 text-danger" th:href="@{/yachts/yacht-details/{id}(id = ${y.id})}">See more</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<footer th:replace="fragments/commons :: footer"></footer>
+</body>
+</html>

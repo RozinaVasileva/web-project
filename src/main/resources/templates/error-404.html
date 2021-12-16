@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="fragments/commons :: head"></head>
+<body>
+
+<header th:replace="fragments/commons :: navigation"></header>
+
+
+
+<main class="p-5 align-content-center bg-blur">
+
+    Ups... we could not find the requested resource! <br/>
+    Please excuse us, we are working on it...
+
+    <div class="d-flex justify-content-center">
+        <div class="my-index-div w-50">
+            <img th:src="@{/images/y4dzn.jpg}" class="card-img-top" >
+        </div>
+    </div>
+
+</main>
+<footer th:replace="fragments/commons :: footer"></footer>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+<head th:replace="fragments/commons :: head"></head>
+<body>
+<header th:replace="fragments/commons :: navigation"></header>
+<main class="p-5 align-content-center bg-blur ">
+    <div class="col-sm-12 my-auto ">
+        <div id="carouselExampleIndicators" class="carousel slide " data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100 rounded" th:src="@{/images/{image}(image=${firstImg})}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 rounded" th:src="@{/images/{image}(image=${secondImg})}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100 rounded" th:src="@{/images/{image}(image=${thirdImg})}" alt="Third slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+    <hr class="border-bottom w-50">
+    <div class="mt-5 col-sm-12 my-auto align-self-center">
+        <input id="searchInput" class="form-control mr-sm-2 w-50" type="search"
+               placeholder="Enter yacht destination" aria-label="Search">
+    </div>
+    <hr class="border-bottom w-75" >
+    <div  class="row mt-5" id="yachtList" >
+        <!-- Start single album -->
+        <div class="col-md-3" th:each="one: ${four}" th:object="${one}">
+            <div class="card mb-4 box-shadow" >
+                <img th:src="*{imageUrl}" class="card-img-top" alt="Thumbnail [100%x225]"
+                     data-holder-rendered="true"
+                     style="height: 225px; width: 100%; display: block;">
+                <div  class="card-body">
+                    <div  class="text-center">
+                        <p class="card-text border-bottom " th:text="*{model}">Model: Name of model</p>
+                        <p class="card-text border-bottom " th:text="*{brand}">Brand: Name of brand</p>
+                        <p class="card-text border-bottom " th:text="*{type}">Type: Yacht type</p>
+                        <p class="card-text border-bottom " th:text="*{price}">Price: Yacht price</p>
+
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-sm btn-outline-secondary">Details</a>
+                        </div>
+                        <div class="btn-group">
+                            <a type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- EO: Start single album -->
+    </div>
+
+</main>
+<footer th:replace="fragments/commons :: footer"></footer>
+<script th:src="@{js/search-bar.js}"></script>
+</body>
+</html>

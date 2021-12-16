@@ -1,0 +1,34 @@
+[{
+  "name": "Lady Elliot Island",
+  "imageUrl":"/images/Lady-Elliot-Island-7.jpg" ,
+  "description": "Lady Elliot Island is a coral cay located at the southern tip of the World Heritage Listed Great Barrier Reef.Situated within a highly protected ‘Green Zone’ the coral cay is a sanctuary for over 1,200 species of marine life and is known for its abundance of manta rays, turtles, amazing array of spectacular marine life and unspoilt coral reef."
+},
+  {
+    "name": "Greece",
+    "imageUrl":"/images/Greece7.jpg" ,
+    "description": "Greece has more than 2,000 islands, of which about 170 are inhabited; some of the easternmost Aegean islands lie just a few miles off the Turkish coast. The country’s capital is Athens, which expanded rapidly in the second half of the 20th century."
+  },
+
+  {
+    "name": "Turkey",
+    "imageUrl":"/images/turkey.jpg" ,
+    "description": "Sunny skies, warm turquoise waters, cooling breezes, deserted anchorages and tranquil bays are what you'll find as you sail the southern coast of Turkey. Combined with the warmth and sincerity of the people, spectacular scenery, and fascinating ruins from previous civilisations and delicious food - who could ask for more!"
+
+  },
+
+  {
+    "name": "Croatia",
+    "imageUrl":"/images/croatia2.jpg" ,
+    "description": "Of Croatia's 3,600 miles of glimmering coastline, the most famous (and touristed) stretch is its southernmost region: the Dalmatian Coast, where dramatic limestone cliffs rise from the deep, and islands are scattered just offshore (the most appealing are Hvar and Korčula). Here you'll find Croatia's top tourist town, Dubrovnik, and the big city of Split, with its impressive Roman ruins."
+
+  },
+
+  {
+    "name": "Indonesia",
+    "imageUrl":"/images/sailing-indonesia-.jpg" ,
+    "description": "Nature and culture are prime attractions of Indonesian tourism. The former can boast a unique combination of a tropical climate, a vast archipelago, and a long stretch of beaches, and the latter complement those with a rich cultural heritage reflecting Indonesia's dynamic history and ethnic diversity. Indonesia has a well-preserved natural ecosystem with rain forests that stretch over about 57% of Indonesia's land (225 million acres). Forests on Sumatra and Kalimantan are examples of popular destinations, such as the Orangutan wildlife reserve. Moreover, Indonesia has one of the world's longest coastlines, measuring 54,716 kilometres (33,999 mi)."
+  }
+
+
+
+]

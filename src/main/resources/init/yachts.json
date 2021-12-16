@@ -1,0 +1,67 @@
+[{
+  "model": "Oasis 40M BO006",
+  "type": "LUXURY",
+  "price": "10000",
+  "length": 40.4,
+  "year": 2020,
+  "cabins": 5,
+  "description":"The Superyacht Benetti Oasis 40M BO006 luxury interior sleeps up to 10 guests in 5 staterooms. She is also capable of carrying up to 9 crew onboard to ensure a relaxed luxury yacht experience. Timeless styling, beautiful furnishings and sumptuous seating feature throughout to create an elegant and comfortable atmosphere. Benetti Oasis 40M BO006 impressive leisure and entertainment facilities make her the ideal yacht for socialising and entertaining with family and friends.",
+  "imageUrl":"/images/benetti-oasis-40m-navigation-4.jpg",
+  "brand":"BENETTI",
+  "destination": "Lady Elliot Island",
+  "username": "admin"
+},
+  {
+    "model": "Gran Turismo 45",
+    "type": "MOTOR",
+    "price": "3000",
+    "length": 14.7,
+    "year": 2020,
+    "cabins": 2,
+    "description":"The Gran Turismo 45 sets new standards in terms of functionality & on board hospitality. With its large windows, vast sundeck and U-shaped cockpit, the GT 45 fosters conviviality and the enjoyment of a great indoor-outdoor experience.\nWith its sleek lines and sporty hull, this 14.78-metre yacht boasts elegant details such as the metallic grey “fashion plates” fixed to the sides of the hard-top and on the engine air intakes. The hard-top and the large hull windows, a feature of the new generation of Express Cruiser, give the boat a sleek, modern look and infuse the interior with soft, natural daylight.",
+    "imageUrl":"/images/grand_turismo_45-2.jpg",
+    "brand":"BENETEAU",
+    "destination": "Croatia",
+    "username": "admin"
+  },
+  {
+    "model": "Oceanis 38.1",
+    "type": "SAILBOAT",
+    "price": "5000",
+    "length": 11.8,
+    "year": 2015,
+    "cabins": 3,
+    "description":"The Oceanis 38.1’s chined hull offers particularly surprising cruising comfort. Good and taut to aft and low on the water, the rigidity under sail of this cruiser takes her further and faster, with exceptional stability. It is a real joy to have two helm stations, a mainsail arch and a huge swim platform on a sailing yacht this size. For the Italian design team, the challenge was to multiply the living spaces in the saloon and offer greater privacy in the owner cabin, while maintaining the visual perspective that her opening to the bow offered in previous versions. The new L-shaped galley makes a facing seat saloon arrangement possible. The space has been well optimised to allow eight people to sit around the table..",
+    "imageUrl":"/images/oceanic 38.jpg",
+    "brand":"BENETEAU",
+    "destination": "Greece",
+    "username": "admin"
+  },
+  {
+    "model": "SR41",
+    "type": "MOTOR",
+    "price": "1000",
+    "length": 12.1,
+    "year": 2020,
+    "cabins": 2,
+    "description":"The BAVARIA SR41 kicks off a new line of motorboats from BAVARIA YACHTS. It combines the best of the sporty BAVARIA S-line and the BAVARIA R-line. A comfortable cockpit, a large sunbed which can be transformed in no time into a lounge area with a table right on the waterfront and a large bathing platform. It makes the BAVARIA SR41 the ideal motor yacht for a perfect day on the water with family and friends.",
+    "imageUrl":"https://res.cloudinary.com/dmknnra7k/image/upload/v1638829139/ssxjga58xhobii3y8isc.png",
+    "brand":"BAVARIA",
+    "destination": "Croatia",
+    "username": "admin"
+  },
+  {
+    "model": "ACE",
+    "type": "LUXURY",
+    "price": "10000",
+    "length": 85,
+    "year": 2018,
+    "cabins": 5,
+    "description":"The 85-metre yacht ACE is geared towards family life. The onboard experience is centred around the upper deck as the main social gathering space, with circulation intelligently designed to facilitate smooth service while preserving the privacy of owner and guests. Andrew Winch also gave ACE a very unusual profile: the two \"eyes\" are both a design feature as well as a sheltered balcony. The interior, also by Andrew Winch, is a glamorous escape with no compromise. ACE is a truly bespoke yacht that defies design convention and symbolises engineering excellence.",
+    "imageUrl":"https://res.cloudinary.com/dmknnra7k/image/upload/v1639422486/Ace-Norway-Dalsfjorden-2019_khg6qv.jpg",
+    "brand":"LURSSEN",
+    "destination": "Turkey",
+    "username": "admin"
+  }
+
+]

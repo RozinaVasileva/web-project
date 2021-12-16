@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head th:fragment="head">
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Yacht Club</title>
+    <link rel="stylesheet" href="/css/reset-css.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+
+</head>
+
+<body>
+<header th:fragment="navigation">
+    <nav class="navbar navbar-expand-lg bg-nav rounded">
+        <a class="nav-link" href="/">
+            <img src="/images/logo.png" width="40px" alt="Logo picture">
+        </a>
+        <a class="navbar-brand text-muted" href="/">Yacht Club</a>
+
+        <div sec:authorize="hasRole('ROLE_ADMIN')" class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin Panel
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <a class="nav-link text-muted active h5"
+                   href="/tours/add">Add Tours</a>
+                <a class="dropdown-item" href="/statistics">Statistics</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+
+
+        <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" class="nav-link text-muted active h5"
+                       th:href="@{/home}"> Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a sec:authorize="isAuthenticated()" class="nav-link text-muted active h5"
+                       th:href="@{/yachts/all-yachts}"> Yachts
+                    </a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link text-muted active h5"
+                       href="/yachts/add">Add Yachts
+                    </a>
+                </li>
+                <li sec:authorize="!isAuthenticated() || isAuthenticated()" class="nav-item">
+                    <a class="nav-link text-muted active h5"
+                       th:href="@{/tours/all-tours}">Tours
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-muted active h5"
+                       sec:authorize="!isAuthenticated()"
+                       th:href="@{/users/login}">Login
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a class="nav-link text-muted active h5"
+                       sec:authorize="!isAuthenticated()"
+                       th:href="@{/users/register}">
+                        Register
+                    </a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <form th:action="@{/logout}" method="POST">
+                        <button type="submit" class="nav-link">
+                            Logout
+                        </button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<footer th:fragment="footer" class="footer bg-blur">
+    <div class="container-fluid text-center">
+        <div class="h5 text-dark">
+            &copy;Yacht Club 2021. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+
+</html>

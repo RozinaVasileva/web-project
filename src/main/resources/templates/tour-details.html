@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+<head th:replace="fragments/commons :: head"></head>
+<body>
+<header th:replace="fragments/commons :: navigation"></header>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<main>
+    <div class="content" style="max-width:1400px">
+
+        <!-- Header -->
+
+
+        <!-- Grid -->
+        <div th:object="${tour}" class="row">
+
+            <!-- Blog entries -->
+            <!-- Blog entry -->
+            <div class="col-12 col-md-8 bg-blur text-dark rounded">
+                <div class="card">
+                    <img th:src="*{imageUrl}" alt="Nature" style="width:100%">
+                    <div class="container">
+                        <h3 th:text="*{name}"><b>TITLE HEADING</b></h3>
+                        <h4 th:text="|*{days} days only for *{price} euro|"></h4>
+                            <h5 th:text="*{startedDate}">April 7, 2014
+                            </h5>
+                    </div>
+                    <div class="container">
+                        <p th:text="*{description}"></p>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Blog entry -->
+                <div class="card">
+                    <div class="container">
+                        <img th:src="*{destination.imageUrl}" alt="Norway" style="width:100%">
+                        <div class="container">
+                            <h3 th:text="*{destination.name}"><b>BLOG ENTRY</b></h3>
+                        </div>
+
+                        <div class="content">
+                            <p th:text="*{destination.description}"></p>
+                            <a class="ml-3 text-danger"
+                               th:href="@{/destinations/destination-details/{id}(id = ${tour.id})}">See more</a>
+                        </div>
+                    </div>
+                    <!-- END BLOG ENTRIES -->
+                </div>
+            </div>
+            <!-- Introduction menu -->
+
+            <!-- About Card -->
+            <div class="col-12 col-md-4 ml-auto bg-blur text-dark rounded">
+
+                <div class="card">
+                    <img th:src="*{yacht.imageUrl}" style="width:100%">
+                    <div class="container">
+                        <h4><b>Tour yacht</b></h4>
+                        <a th:href="@{/yachts/yacht-details/{id}(id = ${tour.id})}" class="card-link"
+                           th:text="*{yacht.model}">Yacht</a>
+                        <dl class="row pt-3">
+                            <dt class="col-sm-3">Length</dt>
+                            <dd class="col-sm-9" th:text="*{yacht.length}">Name</dd>
+
+                            <dt class="col-sm-3">Cabins</dt>
+                            <dd class="col-sm-9" th:text="*{yacht.cabins}">Date
+                            </dd>
+
+                            <dt class="col-sm-3">Brand</dt>
+                            <dd class="col-sm-9" th:text="*{yacht.brand.name}">Days
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <hr>
+                <!-- Posts -->
+
+                <div class="container">
+                    <h4>Top Deals</h4>
+                </div>
+                <ul class="card">
+                    <li th:each="one: ${three}" th:object="${one}">
+                        <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-title"
+                                 th:text="*{name}"></div>
+                            <a class="ml-3 text-success" th:href="@{/tours/tour-details/{id}(id = ${tour.id})}">See
+                                more</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <hr>
+
+
+            <!-- END Introduction Menu -->
+        </div>
+
+        <!-- END GRID -->
+    </div>
+    <br>
+
+    <!-- END w3-content -->
+
+</main>
+<!-- Footer -->
+<footer th:replace="fragments/commons :: footer"></footer>
+
+</body>
+</html>

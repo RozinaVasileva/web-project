@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+    body, h1, h2, h3, h4, h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+<head th:replace="fragments/commons :: head"></head>
+<body>
+<header th:replace="fragments/commons :: navigation"></header>
+<!-- w3-content defines a container for fixed size centered content,
+and is wrapped around the whole page content, except for the footer in this example -->
+<main>
+    <div class="content" style="max-width:1400px">
+
+        <!-- Header -->
+
+
+        <!-- Grid -->
+        <div th:object="${yacht}" class="row">
+
+            <!-- Blog entries -->
+            <!-- Blog entry -->
+            <div class="col-12 col-md-8 bg-blur text-dark rounded">
+                <div class="container">
+                    <h4 th:text="*{model}" ></h4>
+                </div>
+                <div class="card">
+                    <img th:src="*{imageUrl}" alt="Nature" style="width:100%">
+                    <div class="container">
+                        <div class="col-md-6 bg-blur text-dark rounded ">
+                            <dl class="row pt-3">
+                                <dt class="col-sm-4">Name</dt>
+                                <dd class="col-sm-8" th:text="*{model}">Name</dd>
+
+                                <dt class="col-sm-4">Brand</dt>
+                                <dd class="col-sm-8" th:text="*{brand}">Date
+                                </dd>
+
+                                <dt class="col-sm-4">Destination</dt>
+                                <dd class="col-sm-8" th:text="*{destination.name}">Destination
+                                </dd>
+
+                                <dt class="col-sm-4">Type</dt>
+                                <dd class="col-sm-8" th:text="*{type}">Type
+                                </dd>
+                                <dt class="col-sm-4">Cabins</dt>
+                                <dd class="col-sm-8" th:text="*{cabins}">Cabins
+                                </dd>
+                                <dt class="col-sm-4">Length</dt>
+                                <dd class="col-sm-8" th:text="*{length}">Length
+                                </dd>
+
+                                <dt class="col-sm-4">Price</dt>
+                                <dd class="col-sm-8" th:text="*{price}">Price
+                                </dd>
+
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <p th:text="*{description}"></p>
+                    </div>
+                </div>
+                <hr>
+
+            </div>
+
+
+                <!-- Introduction menu -->
+
+                <!-- About Card -->
+                <div class="col-12 col-md-4 ml-auto bg-blur text-dark rounded">
+
+                    <div class="container">
+                        <h4>Top Deals</h4>
+                    </div>
+                    <ul class="card">
+                        <li th:each="one: ${three}" th:object="${one}">
+                            <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
+                            <div class="card-body">
+                                <div class="card-title"
+                                     th:text="*{model}"></div>
+                                <a class="ml-3 text-success" th:href="@{/yachts/yacht-details/{id}(id = ${yacht.id})}">See
+                                    more</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <hr>
+
+
+                <!-- END Introduction Menu -->
+            </div>
+
+            <!-- END GRID -->
+        </div>
+        <br>
+
+        <!-- END w3-content -->
+
+</main>
+<!-- Footer -->
+<footer th:replace="fragments/commons :: footer"></footer>
+
+</body>
+</html>
