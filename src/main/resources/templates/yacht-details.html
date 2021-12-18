@@ -56,7 +56,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 </dd>
 
                                 <dt class="col-sm-4">Price</dt>
-                                <dd class="col-sm-8" th:text="*{price}">Price
+                                <dd class="col-sm-8" th:text="|*{#numbers.formatDecimal(price, 3, 0)}EUR|">Price
                                 </dd>
 
                             </dl>

@@ -30,7 +30,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                     <img th:src="*{imageUrl}" alt="Nature" style="width:100%">
                     <div class="container">
                         <h3 th:text="*{name}"><b>TITLE HEADING</b></h3>
-                        <h4 th:text="|*{days} days only for *{price} euro|"></h4>
+                        <h4 th:text="|*{days} days only for *{#numbers.formatDecimal(price, 3, 0)}EUR per day|"></h4>
                             <h5 th:text="*{startedDate}">April 7, 2014
                             </h5>
                     </div>
@@ -65,9 +65,10 @@ and is wrapped around the whole page content, except for the footer in this exam
                 <div class="card">
                     <img th:src="*{yacht.imageUrl}" style="width:100%">
                     <div class="container">
-                        <h4><b>Tour yacht</b></h4>
                         <a th:href="@{/yachts/yacht-details/{id}(id = ${tour.id})}" class="card-link"
                            th:text="*{yacht.model}">Yacht</a>
+                        <hr class="border-bottom w-75" >
+                        <h4><b>Tour yacht</b></h4>
                         <dl class="row pt-3">
                             <dt class="col-sm-3">Length</dt>
                             <dd class="col-sm-9" th:text="*{yacht.length}">Name</dd>
@@ -94,6 +95,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <div class="card-body">
                             <div class="card-title"
                                  th:text="*{name}"></div>
+                            <p th:text="|*{#numbers.formatDecimal(price, 3, 0)}EUR|"></p>
                             <a class="ml-3 text-success" th:href="@{/tours/tour-details/{id}(id = ${tour.id})}">See
                                 more</a>
                         </div>
