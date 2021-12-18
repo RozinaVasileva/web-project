@@ -2,6 +2,7 @@ package bg.softuni.yacht.web;
 
 import bg.softuni.yacht.model.binding.TourAddBindingModel;
 import bg.softuni.yacht.model.service.TourServiceModel;
+import bg.softuni.yacht.model.view.TourTopViewModel;
 import bg.softuni.yacht.model.view.TourViewModel;
 import bg.softuni.yacht.service.*;
 import org.modelmapper.ModelMapper;
@@ -16,6 +17,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import javax.validation.Valid;
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/tours")
@@ -40,9 +42,15 @@ public class TourController {
     @GetMapping("/all-tours")
     public String getAllTours(Model model){
 
+        List<TourTopViewModel> topViewModels = tourService
+                .findAllTours()
+                .stream()
+                .map(tourServiceModel -> {
+                    TourTopViewModel tourTopViewModel = modelMapper.map(tourServiceModel, TourTopViewModel.class);
+                    return tourTopViewModel;
+                }).collect(Collectors.toList());
 
-
-        model.addAttribute("tours", tourService.findAllTours());
+        model.addAttribute("tours", topViewModels);
         return "all-tours";
     }
 
@@ -91,9 +99,16 @@ public class TourController {
     public String tourDetails(@PathVariable Long id, Model model){
 
         TourViewModel tourViewModel = tourService.findById(id);
+        List<TourTopViewModel> topViewModels = tourService
+                .findThreeBestPricesTours()
+                .stream()
+                .map(tourServiceModel -> {
+                    TourTopViewModel tourTopViewModel = modelMapper.map(tourServiceModel, TourTopViewModel.class);
+                    return tourTopViewModel;
+                }).collect(Collectors.toList());
 
         model.addAttribute("tour", tourViewModel);
-        model.addAttribute("three", tourService.findThreeTours());
+        model.addAttribute("three", topViewModels);
 
         return "tour-details";
 

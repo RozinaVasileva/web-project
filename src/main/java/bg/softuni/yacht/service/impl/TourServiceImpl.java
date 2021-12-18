@@ -104,10 +104,12 @@ public class TourServiceImpl implements TourService {
     }
 
     @Override
-    public List<TourViewModel> findAllTours() {
+    public List<TourServiceModel> findAllTours() {
         return tourRepository.findAll().stream().map(t -> {
 
-            return modelMapper.map(t, TourViewModel.class);
+             TourServiceModel tourServiceModel = modelMapper.map(t, TourServiceModel.class);
+             tourServiceModel.setDestination(t.getDestination().getName());
+            return tourServiceModel;
         }).collect(Collectors.toList());
     }
 
@@ -119,10 +121,11 @@ public class TourServiceImpl implements TourService {
     }
 
     @Override
-    public List<TourViewModel> findThreeTours() {
-        return tourRepository.findByOrderByPriceDesc().stream().limit(3).map(tourEntity -> {
-            TourViewModel tvm = modelMapper.map(tourEntity, TourViewModel.class);
-            return tvm;
+    public List<TourServiceModel> findThreeBestPricesTours() {
+        return tourRepository.findByOrderByPrice().stream().limit(3).map(tourEntity -> {
+            TourServiceModel tourServiceModel = modelMapper.map(tourEntity, TourServiceModel.class);
+            tourServiceModel.setDestination(tourEntity.getDestination().getName());
+            return tourServiceModel;
         }).collect(Collectors.toList());
 
 
