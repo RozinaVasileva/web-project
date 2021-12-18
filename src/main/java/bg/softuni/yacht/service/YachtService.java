@@ -20,7 +20,7 @@ public interface YachtService {
 
     List<String> findAllYachtModels();
 
-    List<YachtViewModel> findAllYachts();
+    List<YachtServiceModel> findAllYachts();
 
     List<YachtViewModel> findLastAddedThreeYachts();
 

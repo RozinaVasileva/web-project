@@ -5,6 +5,7 @@ import bg.softuni.yacht.model.entity.DestinationEntity;
 import bg.softuni.yacht.model.entity.YachtEntity;
 import bg.softuni.yacht.model.service.YachtServiceModel;
 import bg.softuni.yacht.model.view.DestinationViewModel;
+import bg.softuni.yacht.model.view.YachtCardViewModel;
 import bg.softuni.yacht.model.view.YachtViewModel;
 import bg.softuni.yacht.service.*;
 import org.modelmapper.ModelMapper;
@@ -18,6 +19,8 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Controller
@@ -42,7 +45,14 @@ public class YachtsController {
 
     @GetMapping("/all-yachts")
     public String getAllYachts(Model model){
-        model.addAttribute("yachts", this.yachtService.findAllYachts());
+        List<YachtCardViewModel> yachtCardViewModels = yachtService
+                .findAllYachts()
+                .stream()
+                .map(yachtServiceModel -> {
+                    YachtCardViewModel yachtCardViewModel = modelMapper.map(yachtServiceModel, YachtCardViewModel.class);
+                    return yachtCardViewModel;
+                }).collect(Collectors.toList());
+        model.addAttribute("yachts", yachtCardViewModels);
         return "all-yachts";
     }
 

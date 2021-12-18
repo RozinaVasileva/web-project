@@ -60,10 +60,9 @@ public class YachtRestControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("[0].model").value("Oasis 40M BO006"))
                 .andExpect(jsonPath("[0].type").value(YachtTypeEnum.LUXURY.name()))
-                .andExpect(jsonPath("[0].year").value("2020"))
                 .andExpect(jsonPath("[1].model").value("Gran Turismo 45"))
-                .andExpect(jsonPath("[1].type").value(YachtTypeEnum.MOTOR.name()))
-                .andExpect(jsonPath("[1].year").value("2020"));
+                .andExpect(jsonPath("[1].type").value(YachtTypeEnum.MOTOR.name()));
+
 
     }
 

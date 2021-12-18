@@ -1,5 +1,6 @@
 package bg.softuni.yacht.web;
 
+import bg.softuni.yacht.model.view.YachtCardViewModel;
 import bg.softuni.yacht.model.view.YachtViewModel;
 import bg.softuni.yacht.service.CarouselService;
 import bg.softuni.yacht.service.YachtService;
@@ -39,16 +40,16 @@ public class HomeController {
         model.addAttribute("secondImg", carouselService.secondImage());
         model.addAttribute("thirdImg", carouselService.thirdImage());
 
-        List<YachtViewModel> yachtViewModels = yachtService
+        List<YachtCardViewModel> yachtCardViewModels = yachtService
                 .findFourYachtByPrice()
                 .stream()
                 .map(yachtServiceModel -> {
-                    YachtViewModel yvm = modelMapper.map(yachtServiceModel, YachtViewModel.class);
-                    return yvm;
+                    YachtCardViewModel yachtCardViewModel = modelMapper.map(yachtServiceModel, YachtCardViewModel.class);
+                    return yachtCardViewModel;
                 }).collect(Collectors.toList());
 
 
-        model.addAttribute("four", yachtViewModels);
+        model.addAttribute("four", yachtCardViewModels);
         return "home";
 
     }

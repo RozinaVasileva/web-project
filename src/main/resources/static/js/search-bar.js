@@ -14,7 +14,7 @@ console.log(allYachts);
 searchBar.addEventListener('keyup', (e) => {
     const searchingCharacters = searchBar.value.toLowerCase();
     let filteredYachts = allYachts.filter(yacht => {
-        return yacht.destination.name.toLowerCase().includes(searchingCharacters);
+        return yacht.destination.toLowerCase().includes(searchingCharacters);
 
     });
     displayYachts(filteredYachts);
@@ -33,7 +33,7 @@ const displayYachts = (yachts) => {
                     <div class="text-center">
                         <p class="card-text border-bottom ">Model: ${y.model}</p>
                         <p class="card-text border-bottom ">Brand: ${y.brand}</p>
-                        <p class="card-text border-bottom ">Destination: ${y.destination.name}</p>
+                        <p class="card-text border-bottom ">Destination: ${y.destination}</p>
                         <p class="card-text border-bottom ">Type: ${y.type}</p>
                         <p class="card-text border-bottom ">Price: ${y.price}</p>
                  

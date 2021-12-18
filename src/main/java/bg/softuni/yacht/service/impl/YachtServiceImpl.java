@@ -117,12 +117,12 @@ public class YachtServiceImpl implements YachtService {
     }
 
     @Override
-    public List<YachtViewModel> findAllYachts() {
+    public List<YachtServiceModel> findAllYachts() {
         return yachtRepository.findAll().stream().map(y->{
-            YachtViewModel yvm =modelMapper.map(y, YachtViewModel.class);
-            yvm.setBrand(y.getBrand().getName());
-            //yvm.setDestination(y.getDestination().getName());
-            return yvm;
+            YachtServiceModel yachtServiceModel =modelMapper.map(y, YachtServiceModel.class);
+            yachtServiceModel.setBrand(y.getBrand().getName());
+            yachtServiceModel.setDestination(y.getDestination().getName());
+            return yachtServiceModel;
         }).collect(Collectors.toList());
     }
 

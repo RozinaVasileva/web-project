@@ -1,6 +1,7 @@
 package bg.softuni.yacht.web;
 
 
+import bg.softuni.yacht.model.view.YachtCardViewModel;
 import bg.softuni.yacht.model.view.YachtViewModel;
 import bg.softuni.yacht.repository.YachtRepository;
 import org.modelmapper.ModelMapper;
@@ -26,22 +27,23 @@ public class YachtRestController {
 
 
     @GetMapping("/api")
-    public ResponseEntity<List<YachtViewModel>> findAll(){
+    public ResponseEntity<List<YachtCardViewModel>> findAll(){
 
-        List<YachtViewModel> yachtViewModels = yachtRepository
+        List<YachtCardViewModel> yachtCardViewModels = yachtRepository
                 .findAll()
                 .stream()
                 .map(yachtEntity -> {
-                    YachtViewModel yachtViewModel = modelMapper.map(yachtEntity, YachtViewModel.class);
-                    yachtViewModel.setBrand(yachtEntity.getBrand().getName());
+                    YachtCardViewModel yachtCardViewModel = modelMapper.map(yachtEntity, YachtCardViewModel.class);
+                    yachtCardViewModel.setBrand(yachtEntity.getBrand().getName());
+                    yachtCardViewModel.setDestination(yachtEntity.getDestination().getName());
 
-                    return yachtViewModel;
+                    return yachtCardViewModel;
 
                         }).collect(Collectors.toList());
 
         return ResponseEntity
                 .ok()
-                .body(yachtViewModels);
+                .body(yachtCardViewModels);
 
     }
 }
