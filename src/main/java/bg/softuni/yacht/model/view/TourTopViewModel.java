@@ -1,6 +1,6 @@
 package bg.softuni.yacht.model.view;
 
-import bg.softuni.yacht.model.entity.DestinationEntity;
+
 
 import java.math.BigDecimal;
 
