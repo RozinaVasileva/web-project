@@ -11,4 +11,6 @@ import java.util.List;
 public interface TourRepository extends JpaRepository<TourEntity, Long> {
 
     List<TourEntity>findByOrderByPrice();
+    List<TourEntity>findByDestination_Id(Long id);
+
 }
