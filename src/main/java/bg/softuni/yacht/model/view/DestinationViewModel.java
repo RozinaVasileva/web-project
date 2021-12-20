@@ -1,24 +1,27 @@
 package bg.softuni.yacht.model.view;
 
 
-import bg.softuni.yacht.model.entity.TourEntity;
-
-import java.util.List;
 
 public class DestinationViewModel {
 
+
+    private Long id;
     private String name;
     private String imageUrl;
     private String description;
-    private List<TourEntity> tours;
 
-    public DestinationViewModel(String name, String imageUrl, String description) {
-        this.name = name;
-        this.imageUrl = imageUrl;
-        this.description = description;
-    }
+
+
 
     public DestinationViewModel() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -45,11 +48,5 @@ public class DestinationViewModel {
         this.description = description;
     }
 
-    public List<TourEntity> getTours() {
-        return tours;
-    }
 
-    public void setTours(List<TourEntity> tours) {
-        this.tours = tours;
-    }
 }
