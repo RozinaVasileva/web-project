@@ -14,7 +14,7 @@ public class BrandEntity extends BaseEntity{
     private String name;
     @Column(columnDefinition = "TEXT")
     private String description;
-    //todo brand info
+
 
 
     public BrandEntity() {
