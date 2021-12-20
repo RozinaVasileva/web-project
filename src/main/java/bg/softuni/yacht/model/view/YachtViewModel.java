@@ -1,5 +1,8 @@
 package bg.softuni.yacht.model.view;
 
+import bg.softuni.yacht.model.entity.BrandEntity;
+import bg.softuni.yacht.model.entity.DestinationEntity;
+import bg.softuni.yacht.model.entity.UserEntity;
 import bg.softuni.yacht.model.entity.enums.YachtTypeEnum;
 
 
@@ -16,8 +19,9 @@ public class YachtViewModel {
     private int cabins;
     private String description;
     private String imageUrl;
-    private BrandDetailsViewModel brand;
-    private DestinationViewModel destination;
+    private BrandEntity brand;
+    private DestinationEntity destination;
+    private UserEntity user;
 
 
 
@@ -96,20 +100,27 @@ public class YachtViewModel {
         this.imageUrl = imageUrl;
     }
 
-    public BrandDetailsViewModel getBrand() {
+    public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(BrandDetailsViewModel brand) {
+    public void setBrand(BrandEntity brand) {
         this.brand = brand;
     }
 
-    public DestinationViewModel getDestination() {
+    public DestinationEntity getDestination() {
         return destination;
     }
 
-    public YachtViewModel setDestination(DestinationViewModel destination) {
+    public void setDestination(DestinationEntity destination) {
         this.destination = destination;
-        return this;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }
