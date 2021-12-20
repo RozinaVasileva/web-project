@@ -43,9 +43,7 @@ const displayYachts = (yachts) => {
                         <div class="btn-group">
                             <a href="/yachts/yacht-details/${y.id}"  type="button" class="btn btn-sm btn-outline-secondary">Details</a>
                         </div>
-                        <div class="btn-group">
-                            <a href="/yachts/delete/${y.id}"  type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
-                        </div>
+                     
 
                     </div>
                 </div>
