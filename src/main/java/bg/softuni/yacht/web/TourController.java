@@ -1,6 +1,7 @@
 package bg.softuni.yacht.web;
 
 import bg.softuni.yacht.model.binding.TourAddBindingModel;
+import bg.softuni.yacht.model.entity.TourEntity;
 import bg.softuni.yacht.model.service.TourServiceModel;
 import bg.softuni.yacht.model.view.TourTopViewModel;
 import bg.softuni.yacht.model.view.TourViewModel;
@@ -16,12 +17,17 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/tours")
 public class TourController {
+
+    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+
+
     private final ModelMapper modelMapper;
     private final YachtService yachtService;
     private final TourService tourService;
@@ -98,7 +104,9 @@ public class TourController {
     @GetMapping("/tour-details/{id}")
     public String tourDetails(@PathVariable Long id, Model model){
 
-        TourViewModel tourViewModel = tourService.findById(id);
+        TourEntity tourEntity = tourService.findById(id);
+        TourViewModel tourViewModel = modelMapper.map(tourEntity, TourViewModel.class);
+        tourViewModel.setStartedDate(tourEntity.getStartedDate().format(formatter));
         List<TourTopViewModel> topViewModels = tourService
                 .findThreeBestPricesTours()
                 .stream()
