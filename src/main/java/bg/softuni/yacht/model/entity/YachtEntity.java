@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 public class YachtEntity extends BaseEntity{
 
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String model;
     @Enumerated(EnumType.STRING)
     private YachtTypeEnum type;
