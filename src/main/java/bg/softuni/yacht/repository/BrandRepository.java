@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @Repository
 public interface BrandRepository extends JpaRepository<BrandEntity, Long> {
-    @Query("SELECT b.name FROM BrandEntity b")
+    @Query("SELECT b.name FROM BrandEntity b ORDER BY b.name")
     List<String> findAllBrandNames();
 
     Optional<BrandEntity> findByName(String name);
