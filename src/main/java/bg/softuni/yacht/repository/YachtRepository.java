@@ -17,15 +17,15 @@ public interface YachtRepository extends JpaRepository<YachtEntity, Long> {
     Optional<YachtEntity> findByModel(String model);
 
 
-    @Query("SELECT y.model FROM YachtEntity y")
+    @Query("SELECT y.model FROM YachtEntity y ORDER BY y.model")
     List<String> findAllYachtModels();
 
-    //@Query("SELECT y.id FROM YachtEntity y ORDER BY y.price")
+
     List<YachtEntity>findByOrderByPrice();
 
     List<YachtEntity>findByOrderByIdDesc();
 
-    List<YachtEntity>findAllByUser_Username(String username);
+    List<YachtEntity>findAllByUser_UsernameOrderByModel(String username);
 
 
 
