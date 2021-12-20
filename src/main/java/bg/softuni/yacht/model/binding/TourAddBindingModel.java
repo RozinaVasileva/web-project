@@ -15,7 +15,7 @@ public class TourAddBindingModel {
     @Size(min = 2)
     private String name;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    @FutureOrPresent
+    @Future(message = "Date must be in the future")
     private LocalDate startedDate;
     @Positive
     private int days;
