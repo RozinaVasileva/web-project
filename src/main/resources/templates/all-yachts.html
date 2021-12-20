@@ -15,7 +15,7 @@
                         <p class="card-text border-bottom " th:text="|Model: *{model}|">Model: Name of model</p>
                         <p class="card-text border-bottom " th:text="|Brand: *{brand}|">Brand: Name of brand</p>
                         <p class="card-text border-bottom " th:text="|Type: *{type}|">Type: Yacht type</p>
-                        <p class="card-text border-bottom " th:text="|Price: *{#numbers.formatDecimal(price, 3, 0)}EUR|">Price: Yacht price</p>
+                        <p class="card-text border-bottom " th:text="|Price: *{#numbers.formatDecimal(price, 0, 0)}EUR|">Price: Yacht price</p>
                         <p class="card-text border-bottom " th:text="|Destination: *{destination}|">Destination: Yacht
                             type</p>
 
