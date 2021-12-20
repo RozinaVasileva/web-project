@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/commons :: head"></head>
+<body>
+<header th:replace="fragments/commons :: navigation"></header>
+<main class>
+
+    <div th:each="d : ${destinations}" th:object="${d}" class="card mb-3">
+        <img class="card-img-top" th:src="*{imageUrl}" alt="Greece" style="width:100%">
+        <span class="card-body" th:text="*{name}"></span>
+        <a class="ml-3 text-success" th:href="@{/destinations/destination-details/{id}(id = ${d.id})}">See more</a>
+    </div>
+
+
+</main>
+<footer th:replace="fragments/commons :: footer"></footer>
+</body>
+</html>
