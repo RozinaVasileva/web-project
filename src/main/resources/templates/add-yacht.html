@@ -77,14 +77,14 @@
                     <label for="price">Price</label>
                     <input th:field="*{price}"
                            th:errorclass = "is-invalid"
-                           required
+                           required min="100" step="100"
                            id="price"
                            name="price"
-                           type="number" min="0" step="100"
+                           type="number"
                            class="form-control"
                            placeholder="Price">
-                    <small id="priceError" class="invalid-feedback form-text bg-danger rounded">Price must be min 1
-                        characters</small>
+                    <small id="priceError" class="invalid-feedback form-text bg-danger rounded">Price must be min 100
+                        </small>
                 </div>
             </div>
             <div class="form-row">
@@ -113,8 +113,8 @@
                            type="number"
                            class="form-control"
                            placeholder="Year">
-                    <small id="yearError" class="invalid-feedback form-text bg-danger rounded">Year must be more than 2000
-                        characters</small>
+                    <small id="yearError" class="invalid-feedback form-text bg-danger rounded">Year must be after 2000
+                        </small>
                 </div>
             </div>
             <div class="form-row">
@@ -141,8 +141,7 @@
                             id="imageUrl"
                             name="imageUrl"
                             type="file" class="form-control" placeholder="Image Url">
-                    <small id="imageUrlError" class="invalid-feedback form-text bg-danger rounded">Image url must be more than 1
-                        characters</small>
+                    <small id="imageUrlError" class="invalid-feedback form-text bg-danger rounded">You must upload picture</small>
                 </div>
             </div>
             <div class="form-row">
