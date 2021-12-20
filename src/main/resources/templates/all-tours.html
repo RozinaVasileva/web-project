@@ -7,7 +7,7 @@
 
             <div th:each="t : ${tours}" th:object="${t}" class="card mb-3">
                 <img class="card-img-top" th:src="*{imageUrl}" alt="Greece" style="width:100%">
-                <span class="card-body" th:text="*{destination.name}"></span>
+                <span class="card-body" th:text="|*{destination} only for *{price}EUR|"></span>
                 <a class="ml-3 text-danger" th:href="@{/tours/tour-details/{id}(id = ${t.id})}">See more</a>
             </div>
         </div>
