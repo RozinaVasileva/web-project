@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
 <head th:replace="fragments/commons :: head"></head>
 <body>
@@ -58,8 +58,8 @@
                         <div class="btn-group">
                             <a type="button" class="btn btn-sm btn-outline-secondary" th:href="@{/yachts/yacht-details/{id}(id = ${one.id})}">Details</a>
                         </div>
-                        <div class="btn-group">
-                            <a type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        <div sec:authorize="hasRole('ROLE_ADMIN')" class="btn-group">
+                            <a type="button" class="btn btn-sm btn-outline-secondary" th:href="@{/yachts/delete/{id} (id= ${one.id})}">Delete</a>
                         </div>
                     </div>
                 </div>
