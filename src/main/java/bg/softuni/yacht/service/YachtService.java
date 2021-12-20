@@ -22,7 +22,7 @@ public interface YachtService {
 
     List<YachtServiceModel> findAllYachts();
 
-    List<YachtViewModel> findLastAddedThreeYachts();
+    List<YachtServiceModel> findLastAddedThreeYachts();
 
     List<YachtServiceModel> findFourYachtByPrice();
 
