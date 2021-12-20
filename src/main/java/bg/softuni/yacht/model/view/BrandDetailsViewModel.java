@@ -1,23 +1,21 @@
-package bg.softuni.yacht.model.entity;
+package bg.softuni.yacht.model.view;
+
+public class BrandDetailsViewModel {
 
 
-import com.google.gson.annotations.Expose;
-
-import javax.persistence.*;
-
-@Entity
-@Table(name = "brands")
-public class BrandEntity extends BaseEntity{
-
-
-    @Column(nullable = false)
+    private Long id;
     private String name;
-    @Column(columnDefinition = "TEXT")
     private String description;
-    //todo brand info
 
+    public BrandDetailsViewModel() {
+    }
 
-    public BrandEntity() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {

@@ -38,7 +38,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 <dd class="col-sm-8" th:text="*{model}">Name</dd>
 
                                 <dt class="col-sm-4">Brand</dt>
-                                <dd class="col-sm-8" th:text="*{brand}">Date
+                                <dd class="col-sm-8" th:text="*{brand.name}">Date
                                 </dd>
 
                                 <dt class="col-sm-4">Destination</dt>
@@ -63,6 +63,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                         </div>
                     </div>
                     <div class="container">
+                        <p th:text="*{brand.description}"></p>
                         <p th:text="*{description}"></p>
                     </div>
                 </div>

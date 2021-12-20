@@ -1,32 +1,39 @@
 [{
-  "name": "BENETTI"
+  "name": "BENETTI",
+  "description": "One of Europe’s oldest luxury yacht builders, Benetti’s varied portfolio includes semi-custom and custom luxury yachts and superyachts constructed in FRP, aluminium and steel. As a member of the Azimut|Benetti Group, Benetti is a world leader in terms of the total length and units of yachts over 37 metres it has in its order book at any given time."
 },
   {
-    "name": "OCEANCO"
+    "name": "OCEANCO",
+    "description": "Oceanco is a leading yacht builder of custom yachts up to 140m in length, applying innovative design and technology to create a true one of a kind. By offering a highly personalised service to clients, Oceanco applies innovative design and technology to create one of a kind yachts. We thrive on challenges, actively seeking out innovative and unusual projects where interior craftsmanship is fused with complex exterior engineering. We are committed to designing, engineering and building our yachts in a responsible way; from improving energy usage to running a responsible business and contributing to society. The yard's continuous research and development helps to drive the search to develop and apply sustainable technologies for the future."
   },
 
   {
-    "name": "LURSSEN"
-
-  },
-
-  {
-    "name": "BAVARIA"
-
-  },
-
-  {
-    "name": "BENETEAU"
+    "name": "LURSSEN",
+    "description": "Lurssen Yachts is a family-owned German shipbuilding company based in Bremen-Vegesack. Building some of the largest and best German  yachts in the world, the Lurssen skill-set includes design and construction of private yachts, naval ships and other specialist boats. The Lurssen shipyard is divided into three business fields, the first one devoted to the building of naval vessels and special ships such as fast patrol boats, the second area to the building of luxury super yachts from 50 to 150m, and the third field to logistics such as repair, refit and maintenance."
 
   },
 
   {
-    "name": "AMEL"
+    "name": "BAVARIA",
+    "description": "BAVARIA YACHTS is one of the most modern manufacturers of sailing yachts and motorboats worldwide. A BAVARIA yacht is the product of the perfect interplay between its individual components. At its forefront is the immense knowhow on boat construction, the engineering ingenuity and design. Today, it is possible to realise the entire range of this knowledge with a high degree of precision and quality.\nA combination of the best materials, fixtures and fittings, the best craftsmanship and a committed workforce results in something that is the hallmark of every BAVARIA: the joy of yachting."
 
   },
 
   {
-    "name": "CHAPARRAL"
+    "name": "BENETEAU",
+    "description": "BENETEAU offers a wide range of sailing yachts, ranging from small boats, like the First 14, to big boats, such as the Oceanis Yacht 62, a large monohull as well suited to coastal cruising as she is to ocean navigation. The same is true of the motorboats, with lines of outboard and inboard motorboats for leisure boating, as well as big yachts ideal for cruising. \nThis versatility contributed to BENETEAU’s international reputation as a brand, both in the water and at the major boat shows in Europe, the United States and Asia-Pacific. It also helped BENETEAU become a historical player in offshore racing, supplying three generations of one-design boats for the Solitaire Le Figaro single-handed race.\nBENETEAU also won renown with the First sailing yachts in well-known international races such as the Fastnet, the Sydney Hobart and the Middle Sea Race."
+
+  },
+
+  {
+    "name": "AMEL",
+    "description": "Building robust, comfortable and easy-to-handle sailing yachts was Henri Amel’s ethos. Offering sailing enthusiasts the opportunity for an adventure on all the world’s seas requires impeccable construction in terms of quality, safety and comfort. We have successfully built on these key elements of the AMEL spirit in our latest 50-foot and 60-foot models, with, as ever, focus on attention to detail, using 100% French know-how, which, having defined our yard for 50 years, guarantees a refined finish for our customers.  As a result, Amel have succeeded in achieving the perfect combination of the robustness and manoeuvrability essential for long-distance sailing and the luxury of a French way of life."
+
+  },
+
+  {
+    "name": "CHAPARRAL",
+    "description": "Chaparral Boats is a world leading boating manufacturer specializing in a full range of sport boats and sport yachts.\nChaparral has been building quality family boats since 1965. Founded in Fort Lauderdale, Florida – Chaparral has called Nashville, Georgia home since 1976. Encompassing over 1 million square feet of manufacturing facilities, we are one of the South Georgia’s largest employers with a full time roster of over 800 employees. Building high quality boats is still a process completed by hand by skilled craftsmen. At Chaparral, many of our builders are second or third generation boat builders that take personal pride in every boat they build.Chaparral Boats is a world leading boating manufacturer specializing in a full range of sport boats and sport yachts.\nChaparral has been building quality family boats since 1965. Founded in Fort Lauderdale, Florida – Chaparral has called Nashville, Georgia home since 1976. Encompassing over 1 million square feet of manufacturing facilities, we are one of the South Georgia’s largest employers with a full time roster of over 800 employees. Building high quality boats is still a process completed by hand by skilled craftsmen. At Chaparral, many of our builders are second or third generation boat builders that take personal pride in every boat they build."
 
   }
 
