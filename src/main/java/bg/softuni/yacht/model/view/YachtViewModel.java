@@ -16,7 +16,7 @@ public class YachtViewModel {
     private int cabins;
     private String description;
     private String imageUrl;
-    private String brand;
+    private BrandDetailsViewModel brand;
     private DestinationViewModel destination;
 
 
@@ -96,11 +96,11 @@ public class YachtViewModel {
         this.imageUrl = imageUrl;
     }
 
-    public String getBrand() {
+    public BrandDetailsViewModel getBrand() {
         return brand;
     }
 
-    public void setBrand(String brand) {
+    public void setBrand(BrandDetailsViewModel brand) {
         this.brand = brand;
     }
 
