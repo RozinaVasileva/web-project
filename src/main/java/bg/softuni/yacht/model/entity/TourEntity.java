@@ -11,7 +11,7 @@ import java.util.List;
 @Table(name = "tours")
 public class TourEntity extends BaseEntity{
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     @Column(nullable = false)
     private LocalDate startedDate;
@@ -25,7 +25,6 @@ public class TourEntity extends BaseEntity{
     private String imageUrl;
     @ManyToOne
     private DestinationEntity destination;
-
     @OneToOne
     private YachtEntity yacht;
     @ManyToOne
