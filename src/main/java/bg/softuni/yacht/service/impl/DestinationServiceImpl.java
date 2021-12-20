@@ -19,6 +19,7 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DestinationServiceImpl implements DestinationService {
@@ -68,7 +69,18 @@ public class DestinationServiceImpl implements DestinationService {
         return destinationRepository.findByName(destination).orElseThrow(IllegalArgumentException::new);
     }
 
+    @Override
+    public DestinationEntity findById(Long id) {
+        return destinationRepository.findById(id).orElseThrow(IllegalArgumentException::new);
+    }
 
+    @Override
+    public List<DestinationServiceModel> findAllDestinations() {
+        return destinationRepository.findAll().stream().map(destinationEntity -> {
+            DestinationServiceModel destinationServiceModel = modelMapper.map(destinationEntity, DestinationServiceModel.class);
+            return destinationServiceModel;
+        }).collect(Collectors.toList());
+    }
 
 
 }
