@@ -80,6 +80,8 @@ public class TourServiceImpl implements TourService {
     @Override
     public void createTour(TourServiceModel tourServiceModel) {
 
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
         TourEntity tourEntity = modelMapper.map(tourServiceModel, TourEntity.class);
         UserEntity creator = userRepository
                 .findByUsername(tourServiceModel.getUsername())
@@ -87,7 +89,7 @@ public class TourServiceImpl implements TourService {
         tourEntity.setUser(creator);
         YachtEntity yachtEntity = yachtService.findByName(tourServiceModel.getYacht());
         DestinationEntity destinationEntity = destinationService.findByName(tourServiceModel.getDestination());
-
+        tourEntity.setStartedDate(LocalDate.parse(tourServiceModel.getStartedDate(), formatter));
         tourEntity.setYacht(yachtEntity);
         tourEntity.setDestination(destinationEntity);
         tourRepository.save(tourEntity);
