@@ -4,6 +4,7 @@ import bg.softuni.yacht.model.entity.TourEntity;
 import bg.softuni.yacht.model.service.TourServiceModel;
 import bg.softuni.yacht.model.view.TourViewModel;
 
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,4 +22,9 @@ public interface TourService {
     TourEntity findEntityById(Long tourId);
 
     List<TourServiceModel> findThreeBestPricesTours();
+
+
+    List<TourServiceModel> findAllToursByDestinationId(Long id);
+
+
 }
