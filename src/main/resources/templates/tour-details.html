@@ -70,15 +70,17 @@ and is wrapped around the whole page content, except for the footer in this exam
                         <hr class="border-bottom w-75" >
                         <h4><b>Tour yacht</b></h4>
                         <dl class="row pt-3">
-                            <dt class="col-sm-3">Length</dt>
-                            <dd class="col-sm-9" th:text="*{yacht.length}">Name</dd>
-
-                            <dt class="col-sm-3">Cabins</dt>
-                            <dd class="col-sm-9" th:text="*{yacht.cabins}">Date
+                            <dt class="col-sm-4">Brand</dt>
+                            <dd class="col-sm-8" th:text="*{yacht.brand.name}">Brand
                             </dd>
-
-                            <dt class="col-sm-3">Brand</dt>
-                            <dd class="col-sm-9" th:text="*{yacht.brand.name}">Days
+                            <dt class="col-sm-4">Type</dt>
+                            <dd class="col-sm-8" th:text="*{yacht.type}">Type
+                            </dd>
+                            <dt class="col-sm-4">Price</dt>
+                            <dd class="col-sm-8" th:text="*{yacht.price}">Price
+                            </dd>
+                            <dt class="col-sm-4">Destination</dt>
+                            <dd class="col-sm-8" th:text="*{yacht.destination.name}">Destination
                             </dd>
                         </dl>
                     </div>
