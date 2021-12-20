@@ -19,8 +19,7 @@ import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
-    //todo
-    //private final String DEFAULT_PROFILE_PICTURE = "https://res.cloudinary.com/dmknnra7k/image/upload/v1639476272/245-2454602_tanni-chand-default-user-image-png_amareo.png";
+
 
     private final UserRepository userRepository;
     private final UserRoleRepository userRoleRepository;
