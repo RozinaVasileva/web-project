@@ -131,6 +131,21 @@ body {
     position: relative;
 }
 
+.bg-img-contact {
+    /* The image used */
+    background-image: url("/images/contact_back.jpg");
+
+    /* Control the height of the image */
+    min-height: 650px;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+    position: relative;
+}
+/* register*/
+
 
 
 
