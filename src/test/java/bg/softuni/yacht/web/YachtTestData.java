@@ -31,6 +31,7 @@ public class YachtTestData {
     public void init(){
         BrandEntity brandEntity = new BrandEntity();
         brandEntity.setName("BENETTI");
+        brandEntity.setDescription("Some interesting description");
         brandEntity = brandRepository.save(brandEntity);
 
         DestinationEntity destinationEntity = new DestinationEntity();
@@ -45,22 +46,22 @@ public class YachtTestData {
         userEntity = userRepository.save(userEntity);
 
 
-        YachtEntity sr41 = new YachtEntity();
+        YachtEntity tonny = new YachtEntity();
 
-        sr41.setModel("SR");
-        sr41.setImageUrl("https://www.charterworld.com/images/yachts/42m%20Moonen%20motor%20yacht%20Sofia-001.jpg");
-        sr41.setBrand(brandEntity);
-        sr41.setDestination(destinationEntity);
-        sr41.setCabins(2);
-        sr41.setLength(12);
-        sr41.setDescription("Some description");
-        sr41.setPrice(BigDecimal.TEN);
-        sr41.setYear(2020);
-        sr41.setType(YachtTypeEnum.LUXURY);
-        sr41.setUser(userEntity);
+        tonny.setModel("TONNY");
+        tonny.setImageUrl("https://www.charterworld.com/images/yachts/42m%20Moonen%20motor%20yacht%20Sofia-001.jpg");
+        tonny.setBrand(brandEntity);
+        tonny.setDestination(destinationEntity);
+        tonny.setCabins(2);
+        tonny.setLength(12);
+        tonny.setDescription("Some description");
+        tonny.setPrice(BigDecimal.TEN);
+        tonny.setYear(2020);
+        tonny.setType(YachtTypeEnum.LUXURY);
+        tonny.setUser(userEntity);
 
-        sr41 = yachtRepository.save(sr41);
-        testYachtId = sr41.getId();
+        tonny = yachtRepository.save(tonny);
+        testYachtId = tonny.getId();
 
         YachtEntity anna = new YachtEntity();
 
