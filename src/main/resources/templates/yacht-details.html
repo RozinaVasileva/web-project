@@ -86,6 +86,7 @@ and is wrapped around the whole page content, except for the footer in this exam
                             <div class="card-body">
                                 <div class="card-title"
                                      th:text="*{model}"></div>
+                                <p th:text="*{destination}"></p>
                                 <a class="ml-3 text-success" th:href="@{/yachts/yacht-details/{id}(id = ${yacht.id})}">See
                                     more</a>
                             </div>
