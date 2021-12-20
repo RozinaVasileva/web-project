@@ -12,19 +12,14 @@
 <head th:replace="fragments/commons :: head"></head>
 <body>
 <header th:replace="fragments/commons :: navigation"></header>
-<!-- w3-content defines a container for fixed size centered content,
-and is wrapped around the whole page content, except for the footer in this example -->
+
 <main>
     <div class="content" style="max-width:1400px">
 
-        <!-- Header -->
 
-
-        <!-- Grid -->
         <div th:object="${yacht}" class="row">
 
-            <!-- Blog entries -->
-            <!-- Blog entry -->
+
             <div class="col-12 col-md-8 bg-blur text-dark rounded">
                 <div class="container">
                     <h4 th:text="*{model}" ></h4>
@@ -52,11 +47,14 @@ and is wrapped around the whole page content, except for the footer in this exam
                                 <dd class="col-sm-8" th:text="*{cabins}">Cabins
                                 </dd>
                                 <dt class="col-sm-4">Length</dt>
-                                <dd class="col-sm-8" th:text="*{length}">Length
+                                <dd class="col-sm-8" th:text="|*{#numbers.formatDecimal(length, 0, 2)}m.|">Length
                                 </dd>
 
                                 <dt class="col-sm-4">Price</dt>
-                                <dd class="col-sm-8" th:text="|*{#numbers.formatDecimal(price, 3, 0)}EUR|">Price
+                                <dd class="col-sm-8" th:text="|*{#numbers.formatDecimal(price, 0, 0)}EUR|">Price
+                                </dd>
+                                <dt class="col-sm-4">email</dt>
+                                <dd class="col-sm-8" th:text="*{user.email}">Length
                                 </dd>
 
                             </dl>
@@ -72,9 +70,7 @@ and is wrapped around the whole page content, except for the footer in this exam
             </div>
 
 
-                <!-- Introduction menu -->
 
-                <!-- About Card -->
                 <div class="col-12 col-md-4 ml-auto bg-blur text-dark rounded">
 
                     <div class="container">
