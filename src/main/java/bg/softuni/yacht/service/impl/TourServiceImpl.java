@@ -128,4 +128,14 @@ public class TourServiceImpl implements TourService {
 
 
     }
+
+    @Override
+    public List<TourServiceModel> findAllToursByDestinationId(Long id) {
+        return tourRepository.findByDestination_Id(id).stream().map(tourEntity -> {
+            TourServiceModel tourServiceModel = modelMapper.map(tourEntity, TourServiceModel.class);
+            tourServiceModel.setDestination(tourEntity.getDestination().getName());
+            return tourServiceModel;
+        }).collect(Collectors.toList());
+
+    }
 }
