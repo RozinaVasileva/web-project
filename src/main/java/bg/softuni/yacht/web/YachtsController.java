@@ -4,9 +4,7 @@ import bg.softuni.yacht.model.binding.YachtAddBindingModel;
 import bg.softuni.yacht.model.entity.DestinationEntity;
 import bg.softuni.yacht.model.entity.YachtEntity;
 import bg.softuni.yacht.model.service.YachtServiceModel;
-import bg.softuni.yacht.model.view.DestinationViewModel;
-import bg.softuni.yacht.model.view.YachtCardViewModel;
-import bg.softuni.yacht.model.view.YachtViewModel;
+import bg.softuni.yacht.model.view.*;
 import bg.softuni.yacht.service.*;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -101,10 +99,17 @@ public class YachtsController {
        YachtEntity yachtEntity = yachtService.findById(id);
 
        YachtViewModel yachtViewModel = modelMapper.map(yachtEntity, YachtViewModel.class);
-       yachtViewModel.setBrand(yachtEntity.getBrand().getName());
+
+        List<YachtTopViewModel> yachtTopViewModels = yachtService
+                .findLastAddedThreeYachts()
+                .stream()
+                .map(yachtServiceModel -> {
+                    YachtTopViewModel yachtTopViewModel = modelMapper.map(yachtServiceModel, YachtTopViewModel.class);
+                    return yachtTopViewModel;
+                }).collect(Collectors.toList());
 
        model.addAttribute("yacht", yachtViewModel);
-       model.addAttribute("three", yachtService.findLastAddedThreeYachts());
+       model.addAttribute("three", yachtTopViewModels);
 
        return "yacht-details";
 
