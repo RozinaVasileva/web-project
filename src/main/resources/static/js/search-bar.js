@@ -41,7 +41,7 @@ const displayYachts = (yachts) => {
                     <div class="d-flex justify-content-between align-items-center">
 
                         <div class="btn-group">
-                            <a href="/yachts/details/${y.id}"  type="button" class="btn btn-sm btn-outline-secondary">Details</a>
+                            <a href="/yachts/yacht-details/${y.id}"  type="button" class="btn btn-sm btn-outline-secondary">Details</a>
                         </div>
                         <div class="btn-group">
                             <a href="/yachts/delete/${y.id}"  type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
