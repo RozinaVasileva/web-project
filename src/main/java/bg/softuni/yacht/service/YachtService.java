@@ -28,4 +28,6 @@ public interface YachtService {
 
 
     List<String> findAllYachtModelsByUser(String username);
+
+    void deleteById(Long id);
 }
