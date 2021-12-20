@@ -10,9 +10,7 @@
                 <span class="card-body" th:text="|*{destination} only for *{#numbers.formatDecimal(price, 0, 0)}EUR|"></span>
                 <a class="ml-3 text-success" th:href="@{/tours/tour-details/{id}(id = ${t.id})}">See more</a>
             </div>
-        </div>
-    </div>
-    </div>
+
 
 </main>
 <footer th:replace="fragments/commons :: footer"></footer>
