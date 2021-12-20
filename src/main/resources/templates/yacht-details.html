@@ -15,15 +15,14 @@
 
 <main>
     <div class="content" style="max-width:1400px">
-
-
+        <hr class="border-bottom w-75">
         <div th:object="${yacht}" class="row">
-
 
             <div class="col-12 col-md-8 bg-blur text-dark rounded">
                 <div class="container">
-                    <h4 th:text="*{model}" ></h4>
+                    <h4 th:text="*{model}"></h4>
                 </div>
+                <hr class="border-bottom w-100">
                 <div class="card">
                     <img th:src="*{imageUrl}" alt="Nature" style="width:100%">
                     <div class="container">
@@ -70,36 +69,37 @@
             </div>
 
 
+            <div class="col-12 col-md-4 ml-auto bg-blur text-dark rounded">
+                <br>
 
-                <div class="col-12 col-md-4 ml-auto bg-blur text-dark rounded">
-
-                    <div class="container">
-                        <h4>Top Deals</h4>
-                    </div>
-                    <ul class="card">
-                        <li th:each="one: ${three}" th:object="${one}">
-                            <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
-                            <div class="card-body">
-                                <div class="card-title"
-                                     th:text="*{model}"></div>
-                                <p th:text="*{destination}"></p>
-                                <a class="ml-3 text-success" th:href="@{/yachts/yacht-details/{id}(id = ${yacht.id})}">See
-                                    more</a>
-                            </div>
-                        </li>
-                    </ul>
+                <div class="container">
+                    <h4>Top Deals</h4>
                 </div>
-                <hr>
-
-
-                <!-- END Introduction Menu -->
+                <hr class="border-bottom w-75">
+                <ul class="card">
+                    <li th:each="one: ${three}" th:object="${one}">
+                        <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
+                        <div class="card-body">
+                            <div class="card-title"
+                                 th:text="*{model}"></div>
+                            <p th:text="*{destination}"></p>
+                            <a class="ml-3 text-success" th:href="@{/yachts/yacht-details/{id}(id = ${yacht.id})}">See
+                                more</a>
+                        </div>
+                    </li>
+                </ul>
             </div>
+            <hr>
 
-            <!-- END GRID -->
+
+            <!-- END Introduction Menu -->
         </div>
-        <br>
 
-        <!-- END w3-content -->
+        <!-- END GRID -->
+    </div>
+    <br>
+
+    <!-- END w3-content -->
 
 </main>
 <!-- Footer -->
