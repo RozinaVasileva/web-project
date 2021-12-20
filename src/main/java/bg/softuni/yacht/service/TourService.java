@@ -14,7 +14,7 @@ public interface TourService {
     void createTour(TourServiceModel tourServiceModel);
 
 
-    TourViewModel findById(Long id);
+    TourEntity findById(Long id);
 
     List<TourServiceModel> findAllTours();
 
