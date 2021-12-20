@@ -157,5 +157,10 @@ public class YachtServiceImpl implements YachtService {
                 .collect(Collectors.toList());
     }
 
+    @Override
+    public void deleteById(Long id) {
+        yachtRepository.deleteById(id);
+    }
+
 
 }
