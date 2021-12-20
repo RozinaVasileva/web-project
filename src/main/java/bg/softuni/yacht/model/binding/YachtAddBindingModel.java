@@ -25,8 +25,9 @@ public class YachtAddBindingModel {
     private String description;
     @NotNull
     private MultipartFile imageUrl;
-    //@NotNull
+    @NotNull
     private String brand;
+    @NotNull
     private String destination;
 
     public String getModel() {
