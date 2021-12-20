@@ -5,7 +5,6 @@ import bg.softuni.yacht.model.entity.DestinationEntity;
 import bg.softuni.yacht.model.entity.UserEntity;
 import bg.softuni.yacht.model.entity.YachtEntity;
 import bg.softuni.yacht.model.service.YachtServiceModel;
-import bg.softuni.yacht.model.view.YachtViewModel;
 import bg.softuni.yacht.repository.UserRepository;
 import bg.softuni.yacht.repository.YachtRepository;
 import bg.softuni.yacht.service.BrandService;
@@ -22,7 +21,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -127,12 +125,13 @@ public class YachtServiceImpl implements YachtService {
     }
 
     @Override
-    public List<YachtViewModel> findLastAddedThreeYachts() {
+    public List<YachtServiceModel> findLastAddedThreeYachts() {
 
         return yachtRepository.findByOrderByIdDesc().stream().limit(3).map(yachtEntity -> {
-            YachtViewModel yvm = modelMapper.map(yachtEntity, YachtViewModel.class);
-            yvm.setBrand(yachtEntity.getBrand().getName());
-            return yvm;
+            YachtServiceModel yachtServiceModel = modelMapper.map(yachtEntity, YachtServiceModel.class);
+            yachtServiceModel.setBrand(yachtEntity.getBrand().getName());
+            yachtServiceModel.setDestination(yachtEntity.getDestination().getName());
+            return yachtServiceModel;
         }).collect(Collectors.toList());
 
     }
@@ -152,7 +151,7 @@ public class YachtServiceImpl implements YachtService {
     @Override
     public List<String> findAllYachtModelsByUser(String username) {
         //return yachtRepository.findAllYachtModelsByUsername(username);
-        return yachtRepository.findAllByUser_Username(username)
+        return yachtRepository.findAllByUser_UsernameOrderByModel(username)
                 .stream()
                 .map(yachtEntity -> yachtEntity.getModel())
                 .collect(Collectors.toList());
