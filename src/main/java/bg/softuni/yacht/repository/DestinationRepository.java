@@ -11,7 +11,7 @@ import java.util.Optional;
 @Repository
 public interface DestinationRepository extends JpaRepository<DestinationEntity, Long> {
 
-    @Query("SELECT d.name FROM DestinationEntity d" )
+    @Query("SELECT d.name FROM DestinationEntity d ORDER BY d.name" )
     List<String> findAllDestinationNames();
 
     Optional<DestinationEntity> findByName(String name);
