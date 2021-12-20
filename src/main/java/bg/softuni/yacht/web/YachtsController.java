@@ -2,6 +2,7 @@ package bg.softuni.yacht.web;
 
 import bg.softuni.yacht.model.binding.YachtAddBindingModel;
 import bg.softuni.yacht.model.entity.DestinationEntity;
+import bg.softuni.yacht.model.entity.UserEntity;
 import bg.softuni.yacht.model.entity.YachtEntity;
 import bg.softuni.yacht.model.service.YachtServiceModel;
 import bg.softuni.yacht.model.view.*;
@@ -114,6 +115,16 @@ public class YachtsController {
 
        return "yacht-details";
 
+    }
+
+    @GetMapping("/delete/{id}")
+    public String deleteYacht(@PathVariable Long id){
+
+            yachtService.deleteById(id);
+
+
+
+        return "redirect:/home";
     }
 
 
