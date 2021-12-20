@@ -2,10 +2,10 @@ package bg.softuni.yacht.model.view;
 
 import bg.softuni.yacht.model.entity.DestinationEntity;
 import bg.softuni.yacht.model.entity.YachtEntity;
-import org.springframework.format.annotation.DateTimeFormat;
+
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+
 
 public class TourViewModel {
 
