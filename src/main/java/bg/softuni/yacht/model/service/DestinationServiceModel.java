@@ -2,7 +2,7 @@ package bg.softuni.yacht.model.service;
 
 import com.google.gson.annotations.Expose;
 
-import javax.persistence.Column;
+
 
 public class DestinationServiceModel {
 
