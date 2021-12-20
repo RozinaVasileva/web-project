@@ -100,6 +100,7 @@ public class YachtsController {
 
        YachtViewModel yachtViewModel = modelMapper.map(yachtEntity, YachtViewModel.class);
 
+
         List<YachtTopViewModel> yachtTopViewModels = yachtService
                 .findLastAddedThreeYachts()
                 .stream()
