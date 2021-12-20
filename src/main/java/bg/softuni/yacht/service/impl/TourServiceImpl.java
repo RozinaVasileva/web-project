@@ -39,7 +39,7 @@ public class TourServiceImpl implements TourService {
     private final DestinationService destinationService;
     private final TourRepository tourRepository;
     private final UserService userService;
-    private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+
 
     public TourServiceImpl(@Value("classpath:init/tours.json") Resource toursFile, Gson gson, ModelMapper modelMapper, UserRepository userRepository, YachtService yachtService, DestinationService destinationService, TourRepository tourRepository, UserService userService) {
         this.toursFile = toursFile;
@@ -94,13 +94,11 @@ public class TourServiceImpl implements TourService {
     }
 
     @Override
-    public TourViewModel findById(Long id) {
+    public TourEntity findById(Long id) {
+
+         return tourRepository.findById(id).orElseThrow(IllegalArgumentException::new);
 
 
-        TourEntity tourEntity = tourRepository.findById(id).orElseThrow(IllegalArgumentException::new);
-        TourViewModel tourViewModel = modelMapper.map(tourEntity, TourViewModel.class);
-        tourViewModel.setStartedDate(tourEntity.getStartedDate().format(formatter));
-        return tourViewModel;
     }
 
     @Override
