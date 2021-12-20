@@ -23,7 +23,7 @@
                            type="text"
                            class="form-control"
                            placeholder="Name">
-                    <small id="nameError" class="invalid-feedback form-text bg-danger rounded">Tour must be between 5 and 20
+                    <small id="nameError" class="invalid-feedback form-text bg-danger rounded">Tour must be minimum 2
                         characters</small>
                 </div>
             </div>
@@ -39,16 +39,16 @@
                         class="form-control"
                         id="startedDate"
                         name="startedDate"/>
-                <small id="startedDateError" class="invalid-feedback form-text bg-danger rounded">You must select date</small>
+                <small th:if="${#fields.hasErrors('startedDate')}" th:errors="*{startedDate}" class="bg-warning" id="startedDateError" >You must select date</small>
             </div>
             <div class="form-row">
                 <div class="col">
                     <label for="days">Days</label>
                     <input th:field="*{days}"
                            th:errorclass="is-invalid"
+                           required
                            id="days"
                            name="days"
-                           required
                            type="number" min="1" step="1"
                            class="form-control"
                            placeholder="Days">
@@ -62,14 +62,14 @@
                     <label for="price">Price</label>
                     <input th:field="*{price}"
                            th:errorclass="is-invalid"
-                           required minlength="100"
+                           required min="100" step="100"
                            id="price"
                            name="price"
-                           type="number" min="0" step="100"
+                           type="number"
                            class="form-control"
                            placeholder="Price">
-                    <small id="priceError" class="invalid-feedback form-text bg-danger rounded">Price must be min 1
-                        characters</small>
+                    <small id="priceError" class="invalid-feedback form-text bg-danger rounded">Price must be minimum 100
+                        </small>
                 </div>
             </div>
             <div class="form-row">
@@ -84,8 +84,7 @@
                         <option value="" selected>Select destination</option>
                         <option th:each="d: ${destinations}" th:value="${d}" th:text="${d}"></option>
                     </select>
-                    <small id="destinationError" class="invalid-feedback form-text bg-danger rounded">Destination must be min 3
-                        characters</small>
+                    <small id="destinationError" class="invalid-feedback form-text bg-danger rounded">You must select destination</small>
                 </div>
             </div>
             <div class="form-row">
@@ -100,8 +99,7 @@
                         <option value="" selected>Select yacht</option>
                         <option th:each="y: ${yachts}" th:value="${y}" th:text="${y}"></option>
                     </select>
-                    <small id="yachtError" class="invalid-feedback form-text bg-danger rounded">Yacht must be min 2
-                        characters</small>
+                    <small id="yachtError" class="invalid-feedback form-text bg-danger rounded">You must select yacht</small>
                 </div>
             </div>
             <div class="form-row ">
