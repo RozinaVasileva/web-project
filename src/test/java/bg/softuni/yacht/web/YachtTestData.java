@@ -15,18 +15,17 @@ public class YachtTestData {
 
     private UserRepository userRepository;
     private YachtRepository yachtRepository;
-    private LogRepository logRepository;
     private BrandRepository brandRepository;
     private DestinationRepository destinationRepository;
+    private LogRepository logRepository;
 
-    public YachtTestData(UserRepository userRepository, YachtRepository yachtRepository, LogRepository logRepository, BrandRepository brandRepository, DestinationRepository destinationRepository) {
+    public YachtTestData(UserRepository userRepository, YachtRepository yachtRepository, BrandRepository brandRepository, DestinationRepository destinationRepository, LogRepository logRepository) {
         this.userRepository = userRepository;
         this.yachtRepository = yachtRepository;
-        this.logRepository = logRepository;
         this.brandRepository = brandRepository;
         this.destinationRepository = destinationRepository;
+        this.logRepository = logRepository;
     }
-
 
     public void init(){
         BrandEntity brandEntity = new BrandEntity();
@@ -81,11 +80,11 @@ public class YachtTestData {
 
     }
     void cleanUp(){
-        logRepository.deleteAll();
+        userRepository.deleteAll();
         yachtRepository.deleteAll();
         brandRepository.deleteAll();
         destinationRepository.deleteAll();
-        userRepository.deleteAll();
+        logRepository.deleteAll();
     }
 
     public long getTestYachtId(){
