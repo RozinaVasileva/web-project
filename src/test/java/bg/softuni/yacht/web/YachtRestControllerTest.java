@@ -27,11 +27,11 @@ public class YachtRestControllerTest {
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private YachtRepository yachtRepository;
+    @Autowired
     private BrandRepository brandRepository;
     @Autowired
     private DestinationRepository destinationRepository;
-    @Autowired
-    private YachtRepository yachtRepository;
     @Autowired
     private LogRepository logRepository;
 
@@ -42,15 +42,12 @@ public class YachtRestControllerTest {
         testData = new YachtTestData(
                 userRepository,
                 yachtRepository,
-                logRepository,
                 brandRepository,
-                destinationRepository);
+                destinationRepository,
+                 logRepository);
         testData.init();
     }
-    //@AfterEach
-    //public void tearDown() {
-    //    yachtTestData.cleanUp();
-    //}
+
 
     @Test
     @WithMockUser(value = "pesho", roles = {"USER", "ADMIN"})
