@@ -2,6 +2,7 @@ package bg.softuni.yacht.web;
 
 import bg.softuni.yacht.model.entity.enums.YachtTypeEnum;
 import bg.softuni.yacht.repository.*;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -32,35 +33,32 @@ public class YachtsControllerTest {
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private YachtRepository yachtRepository;
+    @Autowired
     private BrandRepository brandRepository;
     @Autowired
     private DestinationRepository destinationRepository;
-    @Autowired
-    private YachtRepository yachtRepository;
     @Autowired
     private LogRepository logRepository;
 
     private YachtTestData testData;
 
     @BeforeEach
-    public void setUp(){
+    public void setUp() {
 
-        //yachtRepository.deleteAll();
+
         testData = new YachtTestData(
                 userRepository,
                 yachtRepository,
-                logRepository,
                 brandRepository,
-                destinationRepository);
+                destinationRepository,
+                 logRepository);
 
         testData.init();
         testYachtId = testData.getTestYachtId();
     }
 
-   //@AfterEach
-   //public void tearDown(){
-   //    testData.cleanUp();
-   //}
+
 
     @Test
     @WithMockUser(value = "pesho", roles = {"USER", "ADMIN"})
@@ -91,6 +89,13 @@ public class YachtsControllerTest {
                 andExpect(status().is3xxRedirection());
 
         Assertions.assertEquals(9, yachtRepository.count());
+    }
+
+    @Test
+    @WithMockUser(value = "pesho", roles = {"USER", "ADMIN"})
+    public void testIfYachtsReturnCorrectStatusCode() throws Exception {
+        mockMvc.perform(MockMvcRequestBuilders.get(YACHT_CONTROLLER_PREFIX + "/all-yachts"))
+                .andExpect(status().isOk());
     }
 
 }
