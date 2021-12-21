@@ -2,10 +2,9 @@ package bg.softuni.yacht.model.entity;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.time.Instant;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.List;
+
 
 @Entity
 @Table(name = "tours")
