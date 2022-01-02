@@ -30,8 +30,10 @@
                 Admin Panel
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="nav-link text-muted active h5"
+                <a class="dropdown-item"
                    href="/tours/add">Add Tours</a>
+                <a class="dropdown-item"
+                   href="/yachts/add">Add Yacht</a>
                 <a class="dropdown-item" href="/statistics">Statistics</a>
                 <a class="dropdown-item" href="#">Something else here</a>
             </div>
@@ -58,11 +60,6 @@
                 <li class="nav-item">
                     <a sec:authorize="isAuthenticated()" class="nav-link text-muted active h5"
                        th:href="@{/yachts/all-yachts}"> Yachts
-                    </a>
-                </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link text-muted active h5"
-                       href="/yachts/add">Add Yachts
                     </a>
                 </li>
                 <li sec:authorize="!isAuthenticated() || isAuthenticated()" class="nav-item">
