@@ -85,8 +85,8 @@
                         <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
                         <div class="card-body">
                             <div class="card-title"
-                                 th:text="*{model}"></div>
-                            <p th:text="*{destination}"></p>
+                                 th:text="|Model: *{model}|"></div>
+                            <p th:text="|Destination: *{destination}|"></p>
                             <a class="ml-3 text-success" th:href="@{/yachts/yacht-details/{id}(id = ${one.id})}">See
                                 more</a>
                         </div>
