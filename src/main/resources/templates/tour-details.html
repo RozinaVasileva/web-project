@@ -78,14 +78,14 @@
                 <div class="container">
                     <h4>Top Deals</h4>
                 </div>
-                <ul class="card">
-                    <li th:each="one: ${three}" th:object="${one}">
+                <ul class="card mb-3" th:each="one: ${three}" th:object="${one}">
+                    <li>
                         <img th:src="*{imageUrl}" alt="Image" class="card-img-top">
                         <div class="card-body">
                             <div class="card-title"
                                  th:text="*{name}"></div>
                             <p th:text="|*{#numbers.formatDecimal(price, 0, 0)}EUR|"></p>
-                            <a class="ml-3 text-success" th:href="@{/tours/tour-details/{id}(id = ${tour.id})}">See
+                            <a class="ml-3 text-success" th:href="@{/tours/tour-details/{id}(id = ${one.id})}">See
                                 more</a>
                         </div>
                     </li>
