@@ -115,6 +115,7 @@ public class TourController {
                     return tourTopViewModel;
                 }).collect(Collectors.toList());
 
+
         model.addAttribute("tour", tourViewModel);
         model.addAttribute("three", topViewModels);
 
