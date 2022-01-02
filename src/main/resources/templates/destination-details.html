@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.w3.org/1999/xhtml">
 <head th:replace="fragments/commons :: head"></head>
 <body>
 <header th:replace="fragments/commons :: navigation"></header>
 <main class>
 
-    <div th:object="${destination}" class="card mb-3 ml-3">
+    <div th:object="${destination}" class="card mb-3">
         <img class="img-fluid" th:src="*{imageUrl}" alt="Greece" style="width:100%"><br>
         <div class="container">
-            <h4 th:text="*{name}"></h4>
+            <h4 class="text-muted text-center" th:text="*{name}"></h4>
+            <hr class="border-bottom w-75">
         </div>
+
         <div class="container">
             <p th:text="*{description}"></p>
         </div>
@@ -25,15 +27,16 @@
                 <div  class="card-body">
                     <div  class="text-center">
                         <p class="card-text border-bottom " th:text="|Model: *{name}|" >Model: Name of model</p>
-                        <p class="card-text border-bottom " th:text="|Price: *{#numbers.formatDecimal(price, 0, 0)}EUR|">Price: Yacht price</p>
+                        <p class="card-text border-bottom " th:text="|Price: *{#numbers.formatDecimal(price, 0, 0)}EUR|">Price: Yacht price</p><br>
 
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                             <a type="button" class="btn btn-sm btn-outline-secondary" th:href="@{/yachts/yacht-details/{id}(id = ${t.id})}">Details</a>
                         </div>
-                        <div class="btn-group">
-                            <a type="button" class="btn btn-sm btn-outline-secondary">Delete</a>
+                        <div class="btn-group" sec:authorize="hasRole('ROLE_ADMIN')">
+                            <a type="button" class="btn btn-sm btn-outline-secondary"
+                               th:href="@{/yachts/delete/{id} (id= ${t.id})}">Delete</a>
                         </div>
                     </div>
                 </div>
