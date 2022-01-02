@@ -29,7 +29,8 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 // allow access to static resources to anyone
                 //.requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .antMatchers("/js/**", "/css/**", "/images/**").permitAll()
-                .antMatchers("/","/destinations/all-destinations","/tours/all-tours", "/users/login", "/users/register").permitAll()
+                .antMatchers("/", "/destinations/all-destinations", "/tours/all-tours", "/users/login", "/users/register").permitAll()
+                .antMatchers("/tours/add", "/statistics").hasRole("ADMIN")
                 .antMatchers("/**").authenticated()
                 .and()
                 .formLogin()
