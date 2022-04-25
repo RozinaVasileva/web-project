@@ -40,7 +40,7 @@
                     <div class="content">
                         <p th:text="*{destination.description}"></p>
                         <a class="ml-3 text-success"
-                           th:href="@{/destinations/destination-details/{id}(id = ${tour.id})}">See more</a>
+                           th:href="@{/destinations/destination-details/{id}(id = ${tour.destination.id})}">See more</a>
                     </div>
                 </div>
 
@@ -52,7 +52,7 @@
                 <div class="card">
                     <img th:src="*{yacht.imageUrl}" style="width:100%">
                     <div class="container">
-                        <a th:href="@{/yachts/yacht-details/{id}(id = ${tour.id})}" class="card-link"
+                        <a th:href="@{/yachts/yacht-details/{id}(id = ${tour.yacht.id})}" class="card-link"
                            th:text="*{yacht.model}">Yacht</a>
                         <hr class="border-bottom w-75">
                         <h4><b>Tour yacht</b></h4>
