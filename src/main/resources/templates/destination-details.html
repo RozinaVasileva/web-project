@@ -26,13 +26,13 @@
                      style="height: 225px; width: 100%; display: block;">
                 <div  class="card-body">
                     <div  class="text-center">
-                        <p class="card-text border-bottom " th:text="|Model: *{name}|" >Model: Name of model</p>
+                        <p class="card-text border-bottom " th:text="*{name}" >Tour name</p>
                         <p class="card-text border-bottom " th:text="|Price: *{#numbers.formatDecimal(price, 0, 0)}EUR|">Price: Yacht price</p><br>
 
                     </div>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
-                            <a type="button" class="btn btn-sm btn-outline-secondary" th:href="@{/yachts/yacht-details/{id}(id = ${t.id})}">Details</a>
+                            <a type="button" class="btn btn-sm btn-outline-secondary" th:href="@{/tours/tour-details/{id}(id = ${t.id})}">Details</a>
                         </div>
                         <div class="btn-group" sec:authorize="hasRole('ROLE_ADMIN')">
                             <a type="button" class="btn btn-sm btn-outline-secondary"
